@@ -1,16 +1,87 @@
-# React + Vite
+# Evidence Vault + Request Fulfillment UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React-based evidence management system with request fulfillment workflow, built with Vite(React) and Tailwind CSS.
 
-Currently, two official plugins are available:
+![React](https://vite.dev/)
+![Vite](https://react.dev/)
+![Tailwind CSS](https://tailwindcss.com/docs/installation/using-vite)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  Features
 
-## React Compiler
+### Core Features
+- **Three Complete Screens**: Evidence Vault, Evidence Detail, Buyer Requests
+- **Filter & Search**: Advanced filtering with URL persistence
+- **Bulk Operations**: Multi-select with "Add to Pack" functionality
+- **Version Control**: Document version history with upload capability
+- **Request Workflow**: Fulfill buyer requests with existing or new evidence
+- **Responsive Design**: Mobile-first, fully responsive UI
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+###  UI Components
+- **Reusable Table Component**: Configurable with selection support
+- **Modal System**: Consistent dialogs for uploads and fulfillments
+- **Status Chips**: Color-coded indicators for document status
+- **Navigation**: Clean, intuitive screen navigation
 
-## Expanding the ESLint configuration
+##  Screens
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Screen A: Evidence Vault
+- Table with filters (Doc Type, Status, Expiry, Search)
+- Bulk selection with counter
+- URL query parameter persistence
+- View details navigation
+
+### Screen B: Evidence Detail
+- Document metadata display
+- Version history table
+- Upload new version modal
+- Status indicators
+
+### Screen C: Buyer Requests
+- Request list with due dates and status
+- Fulfillment modal with two options:
+  - Use existing evidence
+  - Upload new evidence
+- Status tracking
+
+##  Tech Stack
+
+- **Frontend**: React 19.2, Vite
+- **Styling**: Tailwind CSS
+- **Routing**: React Router DOM
+- **State Management**: React Hooks + URL persistence
+- **Build Tool**: Vite
+
+##  Project Structure
+src/
+├── components/
+│ ├── common/
+│ │ ├── Table.jsx # Reusable table with selection
+│ │ ├── Modal.jsx # Modal dialog component
+│ │ └── StatusChip.jsx # Status indicator
+│ └── screens/
+│ ├── EvidenceVault.jsx # Screen A
+│ ├── EvidenceDetail.jsx # Screen B
+│ └── BuyerRequests.jsx # Screen C
+├── data/
+│ └── mockData.js # Mock evidence and request data
+├── hooks/
+│ └── useQueryParams.js # URL query management
+└── App.jsx # Main application
+
+
+## Quick Start
+
+### Prerequisites
+- Node.js 20+ and npm
+
+### Installation
+```bash
+# Clone repository
+git clone https://github.com/zillulofficial/Evidence-Vault
+cd evidence-vault
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
